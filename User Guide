@@ -24,14 +24,19 @@
 "{" - starts a loop.
 "}" - decreases the looper.
 "x" - increases looper by 1.
-"y" - decreases looper by 1
+"y" - decreases looper by 1.
+":" - if/else seperator.
+"(" - starts an if block.
+")" - ends an if block.
 
 +--- SEMANTICS ---+
 - cell tape refers to the internal value of sixteenbit
 - the loop counter refers to the internal value of cell
 - the looper refers to the internal value of loop
 - x and y increase and decrease the looper. this comes with the side effect of breaking the interpreter if you're not careful.
-- currently, not more than one if/else is possible on any single line.
+- currently, nested ifs execute everything inside the if block, including nested else blocks, while else blocks execute all else block, even ones nested in if blocks. i have no idea whether to call this a bug or a feature.
+- if blocks only activate when cell is more than 0, and cell resets upon resolution.
+- loops only execute more than once if cell was made to be >0 pre-loop.
 
 +--- CHANGELOG: ---+
 V 1.2:
@@ -48,4 +53,9 @@ V 1.4:
 
 - if/else (:) have been added, seperated by :.
 - bitwise operations officially do something now
+- javascript was removed
+
+V 1.5:
+
+- multiple if statements possible
 - javascript was removed
