@@ -1,42 +1,43 @@
-">" - moves the data pointer right to the tape by one.
-"<" - moves the data pointer left to the tape by one.
-"0" - prints the current cell of the tape.
-"%" - prints the ascii value associated with the cell on the tape.
-"_" - prints both the current cell and the current loop value.
-"|" - bitwise OR.
-"+" - increases the loop counter by 1.
-"-" - decreases the loop counter by 1.
-"1" - prints the current loop value.
-"^" - bitwise AND.
-"!" - resets the tape cell to 0.
-"$" - resets the loop counter to 0.
-"#" - makes the loop value equal to the cell tape.
-"?" - makes the cell tape equal to the loop value.
-"&" - adds the loop value to the cell tape.
-"*" - adds the cell tape to the loop value.
-"," - bitwise XOR.
-";" - ignores every character after it.
-"a" - sets the cell tape to 65.
-"/" - ignores every character after it.
-"." - sets the cell tape to 32.
-"~" - prints a newline.
-"=" - waits 1 second.
-"{" - starts a loop.
-"}" - decreases the looper.
-"x" - increases looper by 1.
-"y" - decreases looper by 1.
-":" - if/else seperator.
-"(" - starts an if block.
-")" - ends an if block.
-
 +--- SEMANTICS ---+
-- cell tape refers to the internal value of sixteenbit
-- the loop counter refers to the internal value of cell
-- the looper refers to the internal value of loop
+- sixteenbit, cell, and loop are all internal values. as in, they are named that in the code.
+- bitwise operations work as such: sixteenbit |= cell
 - x and y increase and decrease the looper. this comes with the side effect of breaking the interpreter if you're not careful.
 - currently, nested ifs execute everything inside the if block, including nested else blocks, while else blocks execute all else block, even ones nested in if blocks. i have no idea whether to call this a bug or a feature.
 - if blocks only activate when cell is more than 0, and cell resets upon resolution.
 - loops only execute more than once if cell was made to be >0 pre-loop.
+
++--- SYNTAX ---+
+">" - moves the data pointer right to the sixteenbit register by one.
+"<" - moves the data pointer left to the sixteenbit by one.
+"0" - prints the current value of the sixteenbit register.
+"%" - prints the ascii value associated with the value on sixteenbit.
+"_" - prints both the current sixteenbit value and the current cell register value.
+"|" - bitwise OR.
+"+" - increases the cell by 1.
+"-" - decreases the cell by 1.
+"1" - prints the current cell register value.
+"^" - bitwise AND.
+"!" - resets the sixteenbit register to 0.
+"$" - resets the cell register to 0.
+"#" - makes the cell register equal to the sixteenbit register.
+"?" - makes the sixteenbit register equal to the cell value.
+"&" - adds the cell to the sixteenbit.
+"*" - adds the sixteenbit to the cell.
+"," - bitwise XOR.
+"a" - sets the sixteenbit to 65.
+"/" - a force stop.
+"." - sets the sixteenbit register to 32.
+"~" - prints a newline.
+"=" - waits 1 second.
+"{" - starts a loop.
+"}" - decreases the loop register.
+"x" - increases loop register by 1.
+"y" - decreases loop register by 1.
+":" - if/else seperator.
+"(" - starts an if block.
+")" - ends an if block.
+"[" - starts note block.
+"]" - ends note block.
 
 +--- CHANGELOG: ---+
 V 1.2:
@@ -57,5 +58,5 @@ V 1.4:
 
 V 1.5:
 
-- multiple if statements possible
+- multiple if statements possible (no nesting)
 - javascript was removed
