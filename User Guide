@@ -31,4 +31,10 @@ warning: nested loops are not supported.
 +--- CHANGELOG: ---+
 V 1.2:
 - nested loops have support now
-- herobrine was removed
+- javascript was removed
+
+v 1.3:
+
+- [] are for notes now [they go in the brackets like this]
+- ; no longer exists
+- javascript was removed
