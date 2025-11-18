@@ -39,6 +39,39 @@
 "[" - starts note block.
 "]" - ends note block.
 
++--- ASSEMBLY ---+
+"incx": ">"
+"decx": "<"
+"prin": "0"
+"pras": "%"
+"prxy": "_"
+"or": "|"
+"incy": "+"
+"decy": "-"
+"prnty": "1"
+"and": "^"
+"zrx": "!"
+"zry": "$"
+"y = x": "#"
+"x = y": "?"
+"add y to x": "&"
+"add x to y": "*"
+"xor": ","
+"[": "["
+"seta": "a"
+"end": "/"
+"sets": "."
+"nl": "~"
+"time": "="
+"incc": "x"
+"decc": "y"
+"beginloop": "{"
+"endloop": "}"
+"]": "]"
+"if": "("
+"ifelse": ":"
+"endif": ")"
+
 +--- CHANGELOG: ---+
 V 1.2:
 - nested loops have support now
@@ -59,4 +92,9 @@ V 1.4:
 V 1.5:
 
 - multiple if statements possible (no nesting)
+- javascript was removed
+
+ASM V 1.0
+
+- created
 - javascript was removed
